@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:http_cat_flutter/features/random_cat/cubit/random_cat_cubit.dart';
-import 'package:http_cat_flutter/shared/repositories/cat_status.dart';
 import 'package:http_cat_flutter/shared/di.dart';
 import 'package:http_cat_flutter/shared/widgets/my_async_button.dart';
 
@@ -26,14 +25,18 @@ class RandomCatView extends StatelessWidget {
       appBar: AppBar(
         title: const Text("Random Cat"),
       ),
-      body: Column(
-        children: [
-          const _RandomImageBuilder(),
-          MyAsyncButton(
-            onPressed: context.read<RandomCatCubit>().fetchRandomCat,
-            child: const Text("Randomize"),
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              const _RandomImageBuilder(),
+              MyAsyncButton(
+                onPressed: context.read<RandomCatCubit>().fetchRandomCat,
+                child: const Text("Randomize"),
+              ),
+            ],
           ),
-        ],
+        ),
       ),
     );
   }
@@ -46,12 +49,6 @@ class _RandomImageBuilder extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<RandomCatCubit, RandomCatState>(
       builder: (context, state) {
-        // if (state.catStatus == CatStatus.loading) {
-        //   return const Center(child: CircularProgressIndicator.adaptive());
-        // }
-        // if (state.catStatus == CatStatus.failure) {
-        //   return const Center(child: Text("Couldn't load http cat"));
-        // }
         final imageBytes = state.imageBytes;
         if (imageBytes != null) {
           return Image.memory(imageBytes);
