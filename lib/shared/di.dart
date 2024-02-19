@@ -1,5 +1,6 @@
 import 'package:get_it/get_it.dart';
 import 'package:http/http.dart' as http;
+import 'package:http_cat_flutter/features/cat_select/cubit/cat_select_cubit.dart';
 import 'package:http_cat_flutter/features/random_cat/cubit/random_cat_cubit.dart';
 import 'package:http_cat_flutter/shared/repositories/cat_repository.dart';
 
@@ -14,4 +15,5 @@ void init() {
 
   // Bloc/Cubit
   sl.registerFactory<RandomCatCubit>(() => RandomCatCubit(sl()));
+  sl.registerFactory<CatSelectCubit>(() => CatSelectCubit(sl()));
 }
