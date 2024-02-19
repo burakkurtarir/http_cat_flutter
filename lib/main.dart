@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:http_cat_flutter/features/random_cat/random_cat_page.dart';
+import 'package:http_cat_flutter/features/cat_select/cat_select_page.dart';
 import 'package:http_cat_flutter/shared/di.dart' as di;
 
 void main() {
@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const RandomCatPage(),
+      home: const CatSelectPage(),
     );
   }
 }

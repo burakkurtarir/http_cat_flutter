@@ -7,5 +7,10 @@ A new Flutter project.
 This project is using [Http Cat API](https://http.cat). This is the funniest api i've ever used. Basically you send a status code and API returns you a cat image xd
 
 ## Screenshots
-<img src="screenshots/random_http_cat.png" width="250">
+<img src="screenshots/cat_509.png" width="200">
+<img src="screenshots/cat_521.png" width="200">
+<img src="screenshots/cat_404.png" width="200">
 <br>
+<img src="screenshots/cat_204.png" width="200">
+<img src="screenshots/cat_599.png" width="200">
+<img src="screenshots/cat_422.png" width="200">
