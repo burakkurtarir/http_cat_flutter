@@ -11,7 +11,7 @@ workflows:
               flutter packages pub get
           - name: Build AAB with Flutter
             script: | 
-              flutter build apk --debug
+              flutter build appbundle --release
         artifacts:
           - build/**/outputs/**/*.aab
           - build/**/outputs/**/mapping.txt
