@@ -5,19 +5,19 @@ workflows:
         instance_type: mac_mini_m1
         environment:
           flutter: stable  
-          scripts:
-            - name: Get Flutter packages
-              script: | 
-                flutter packages pub get
-            - name: Build AAB with Flutter
-              script: | 
-                flutter build apk --debug
-            artifacts:
-              - build/**/outputs/**/*.aab
-              - build/**/outputs/**/mapping.txt
-              - flutter_drive.log
-          publishing:
-            email:
-              recipients:
-                - burak.kurtarir35@gmail.com
+        scripts:
+          - name: Get Flutter packages
+            script: | 
+              flutter packages pub get
+          - name: Build AAB with Flutter
+            script: | 
+              flutter build apk --debug
+          artifacts:
+            - build/**/outputs/**/*.aab
+            - build/**/outputs/**/mapping.txt
+            - flutter_drive.log
+        publishing:
+          email:
+            recipients:
+              - burak.kurtarir35@gmail.com
 
